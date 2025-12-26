@@ -1,0 +1,10 @@
+spring:
+# Remove the profiles.active line completely
+
+rate-limit:
+  user:
+    get: 2
+    post: 2
+  admin:
+    get: 10
+    post: 10
