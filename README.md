@@ -126,56 +126,6 @@
 
  **◉Deterministic rate-limit testing via test profiles**
 
-
-
-**🏗️ High-Level Architecture**
-
-
-
-Client / Company Backend
-
-&nbsp;       |
-
-&nbsp;       |  (JWT Authenticated Requests)
-
-&nbsp;       v
-
-+-----------------------------+
-
-|  Spring Boot REST API       |
-
-|                             |
-
-|  - Controllers              |
-
-|  - Services                 |
-
-|  - TenantContext            |
-
-|  - JWT Filter               |
-
-|  - Rate Limiting Filter     |
-
-+-----------------------------+
-
-&nbsp;       |
-
-&nbsp;       |---------------------|
-
-&nbsp;       |                     |
-
-&nbsp;       v                     v
-
-+----------------+     +----------------+
-
-| PostgreSQL     |     | Redis          |
-
-| (Event Data)   |     | (Rate Limits)  |
-
-+----------------+     +----------------+
-
-
-
 **🧠 Design Decisions (Senior-Level)**
 
  **◉Stateless Security**
@@ -387,4 +337,5 @@ Client / Company Backend
 **as a base for real-world SaaS platforms.**
 
                         
+
 
