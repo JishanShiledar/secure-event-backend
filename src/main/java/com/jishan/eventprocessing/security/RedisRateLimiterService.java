@@ -29,10 +29,10 @@ public class RedisRateLimiterService {
             return count <= limit;
 
         } catch (Exception ex) {
-            // Log the error so we know Redis is down
             log.error("❌ Redis connection failed! Allowing request to prevent blocking traffic. Error: {}",
                     ex.getMessage());
             return true;
         }
     }
+
 }
