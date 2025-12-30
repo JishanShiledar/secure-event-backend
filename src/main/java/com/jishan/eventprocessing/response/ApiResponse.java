@@ -31,7 +31,7 @@ public class ApiResponse<T> {
                 data
         );
     }
-    // Add this method if missing
+   
     public static <T> ApiResponse<T> failure(
             int status,
             String message,
@@ -47,3 +47,4 @@ public class ApiResponse<T> {
         );
     }
 }
+
