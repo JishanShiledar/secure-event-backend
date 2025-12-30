@@ -84,13 +84,13 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Bean Validation (for @NotNull, @NotBlank, @Valid, etc.) -->
+        <!-- Bean Validation -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
-        <!-- Testing (ONLY THIS ONE) -->
+        <!-- Testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
