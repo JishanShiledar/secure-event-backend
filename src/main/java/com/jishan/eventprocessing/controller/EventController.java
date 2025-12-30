@@ -26,9 +26,7 @@ public class EventController {
 
     private final EventService eventService;
 
-    /**
-     * Create a new event
-     */
+   
     @PostMapping
     public ResponseEntity<ApiResponse<Event>> createEvent( @Valid @RequestBody EventRequest request,
                                                            HttpServletRequest httpRequest) {
@@ -55,9 +53,7 @@ public class EventController {
                 );
     }
 
-    /**
-     * Get all events (with pagination)
-     */
+    
     @GetMapping
     public ResponseEntity<ApiResponse<Page<Event>>> getAllEvents(
             @PageableDefault(size = 10, sort = "eventTimestamp") Pageable pageable,
@@ -73,9 +69,7 @@ public class EventController {
         );
     }
 
-    /**
-     * Get all events for a user
-     */
+    
     @GetMapping("/user/{userId}")
     public ResponseEntity<ApiResponse<Page<Event>>> getEventsByUser(
             @PathVariable String userId,
@@ -93,9 +87,7 @@ public class EventController {
     }
 
 
-    /**
-     * Get events by user and event type
-     */
+    
     @GetMapping("/user/{userId}/type/{eventType}")
     public ResponseEntity<ApiResponse<Page<Event>>> getEventsByUserAndType(
             @PathVariable String userId,
@@ -114,4 +106,5 @@ public class EventController {
     }
 
 }
+
 
