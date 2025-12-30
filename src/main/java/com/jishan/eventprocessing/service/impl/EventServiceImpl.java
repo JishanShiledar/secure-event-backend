@@ -24,12 +24,12 @@ public class EventServiceImpl implements EventService {
     @Override
     public Event saveEvent(Event event) {
 
-        // Always set createdAt if missing
+       
         if (event.getCreatedAt() == null) {
             event.setCreatedAt(LocalDateTime.now());
         }
 
-        // 🔐 ALWAYS enforce tenant ownership
+        
         event.setCompanyId(TenantContext.getCompanyId());
 
         return eventRepository.save(event);
@@ -90,3 +90,4 @@ public class EventServiceImpl implements EventService {
 
 
 }
+
