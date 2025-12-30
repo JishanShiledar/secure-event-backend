@@ -36,10 +36,10 @@ public class SecurityConfig {
                         .anyRequest().hasRole("ADMIN")
                 )
 
-                // 1️⃣ JWT FIRST → sets SecurityContext + TenantContext
+                
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
 
-                // 2️⃣ Rate limiting AFTER JWT → has companyId + role
+               
                 .addFilterAfter(rateLimitingFilter, JwtAuthenticationFilter.class);
 
         return http.build();
@@ -50,4 +50,5 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 }
+
 
