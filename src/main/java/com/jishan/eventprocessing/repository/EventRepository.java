@@ -16,7 +16,6 @@ public interface EventRepository extends JpaRepository<Event, Long> {
 
 
 
-//    @Query("SELECT e.companyId, COUNT(e) FROM Event e GROUP BY e.companyId")
 
 
 
@@ -81,4 +80,5 @@ public interface EventRepository extends JpaRepository<Event, Long> {
     );
 
 }
+
 
