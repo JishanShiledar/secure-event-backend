@@ -26,7 +26,7 @@ public class RateLimitingFilter extends OncePerRequestFilter {
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
-        // Skip rate limiting for auth endpoints
+        
         return request.getRequestURI().startsWith("/api/auth");
     }
     @Override
@@ -83,3 +83,4 @@ public class RateLimitingFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 }
+
