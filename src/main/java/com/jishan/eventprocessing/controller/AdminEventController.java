@@ -22,10 +22,10 @@ public class AdminEventController {
     @GetMapping
     public ApiResponse<Page<Event>> getAllEvents(Pageable pageable) {
         return ApiResponse.success(
-                HttpStatus.OK.value(),                    // status (200)
-                "All events fetched successfully",        // message
-                "/api/admin/events",                      // path
-                adminEventService.getAllEvents(pageable)  // data
+                HttpStatus.OK.value(),                    
+                "All events fetched successfully",        
+                "/api/admin/events",                      
+                adminEventService.getAllEvents(pageable)  
         );
     }
 
@@ -36,10 +36,10 @@ public class AdminEventController {
             Pageable pageable
     ) {
         return ApiResponse.success(
-                HttpStatus.OK.value(),                                      // status (200)
-                "Company events fetched successfully",                      // message
-                "/api/admin/events/company/" + companyId,                  // path
-                adminEventService.getEventsByCompany(companyId, pageable)  // data
+                HttpStatus.OK.value(),                                     
+                "Company events fetched successfully",                     
+                "/api/admin/events/company/" + companyId,                  
+                adminEventService.getEventsByCompany(companyId, pageable)  
         );
     }
 
@@ -47,10 +47,10 @@ public class AdminEventController {
     @GetMapping("/count")
     public ApiResponse<Long> getTotalEventCount() {
         return ApiResponse.success(
-                HttpStatus.OK.value(),                         // status (200)
-                "Total event count fetched successfully",      // message
-                "/api/admin/events/count",                     // path
-                adminEventService.getTotalEventCount()         // data
+                HttpStatus.OK.value(),                         
+                "Total event count fetched successfully",     
+                "/api/admin/events/count",                     
+                adminEventService.getTotalEventCount()         
         );
     }
 
@@ -58,10 +58,11 @@ public class AdminEventController {
     @GetMapping("/count/company")
     public ApiResponse<Map<String, Long>> getCompanyWiseCounts() {
         return ApiResponse.success(
-                HttpStatus.OK.value(),                              // status (200)
-                "Company-wise event count fetched successfully",    // message
-                "/api/admin/events/count/company",                  // path
-                adminEventService.getCompanyWiseCounts()            // data
+                HttpStatus.OK.value(),                              
+                "Company-wise event count fetched successfully",    
+                "/api/admin/events/count/company",                 
+                adminEventService.getCompanyWiseCounts()            
         );
     }
+
 }
