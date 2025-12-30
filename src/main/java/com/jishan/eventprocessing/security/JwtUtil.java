@@ -16,15 +16,13 @@ public class JwtUtil {
 
     private final Key key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
 
-    /**
-     * Generate JWT token with multi-tenant support
-     */
+   
     public String generateToken(String username, String role, String companyId) {
 
         return Jwts.builder()
-                .setSubject(username)               // who
-                .claim("role", role)                // authority
-                .claim("companyId", companyId)      // tenant
+                .setSubject(username)               
+                .claim("role", role)                
+                .claim("companyId", companyId)      
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .signWith(key, SignatureAlgorithm.HS256)
@@ -67,3 +65,4 @@ public class JwtUtil {
                 .getBody();
     }
 }
+
