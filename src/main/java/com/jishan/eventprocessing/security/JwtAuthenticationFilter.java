@@ -62,17 +62,18 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
                     SecurityContextHolder.getContext().setAuthentication(authentication);
 
-                    // 🔐 TENANT SET ONLY when token exists
+                    
                     TenantContext.setCompanyId(companyId);
                 }
             }
 
-            // 🔁 Continue filter chain
+           
             filterChain.doFilter(request, response);
 
         } finally {
-            // 🔒 Clear tenant AFTER request fully finishes
+           
             TenantContext.clear();
         }
     }
 }
+
